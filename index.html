@@ -1,0 +1,244 @@
+<div style="max-width: 900px; margin: auto;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Portfolio of Cheng-Ning Huang</title>
+</head>
+<body>
+
+  <p>
+    The projects listed below represent my most significant work. Each project includes direct links to demos and repositories, and I encourage the committee to explore them for a clearer view.
+    For additional projects mentioned in my résumé, please visit my
+    <a href="https://github.com/HCN1222">GitHub main page</a>.
+  </p>
+
+  <p>
+    Each repository is accompanied by a clearly written README.
+  </p>
+
+  <h1>RESEARCH PROJECTS</h1>
+
+  <hr style="border: 0; border-top: 2px solid #ccc; margin: 32px 0;">
+
+  <!-- Project 1 -->
+  <h2><em>Accident Scene Optimization: Enhanced Scene Scanning with Gaussian Splatting for Swift Vehicle Clearance</em></h2>
+
+  <p>
+    A novel reconstruction pipeline using specialized Gaussian Splatting to improve scene completeness on reflective vehicles.
+  </p>
+
+  <ul>
+    <li><a href="https://youtu.be/3oCs9Vac0BQ">Demo Video</a></li>
+    <li><a href="https://github.com/HCN1222/2DGS-DR">GitHub Repository (Specialized Gaussian Splatting)</a></li>
+  </ul>
+
+  <details>
+    <summary><b>Quick Demo</b></summary>
+
+    <br>
+
+    <p>
+      <img src="https://raw.githubusercontent.com/HCN1222/2DGS-DR/main/images/teaser.png" alt="Teaser" width="900">
+    </p>
+
+    <p>
+      This project aims at improving the mesh extraction of 2D Gaussian Splatting by adding a deferred reflection step.
+    </p>
+
+    <p>
+      <img src="https://raw.githubusercontent.com/HCN1222/2DGS-DR/main/images/2DDR_vs_2DGS.png" alt="Comparison between 2DGS-DR and 2DGS" width="900">
+    </p>
+
+    <p>
+      Comparison between 2D Gaussian Splatting with Deferred Reflection (ours) and 2D Gaussian Splatting.
+      The left image is the result of 2D Gaussian Splatting with Deferred Reflection, and the right image is the result of 2D Gaussian Splatting.
+      The right image has better mesh extraction.
+    </p>
+  </details>
+
+  <hr style="border: 0; border-top: 1px solid #ccc; margin: 32px 0;">
+
+  <!-- Project 2 -->
+  <h2><em>High-Performance 3D Rendering Accelerator for IC Design Applications</em></h2>
+
+  <p>
+    A hardware design capable of rendering colored triangular meshes with up to 1,048,576 faces and vertices at 144 fps, implemented through a full ASIC design flow.
+  </p>
+
+  <ul>
+    <li><a href="https://github.com/HCN1222/3D-rendering-accelerator">GitHub Repository</a></li>
+  </ul>
+
+  <details>
+    <summary><b>Quick Demo</b></summary>
+
+    <br>
+
+    <p>
+      <img src="https://raw.githubusercontent.com/HCN1222/3D-rendering-accelerator/main/images/teasor.png" alt="Teaser" width="900">
+    </p>
+
+    <p>
+      This is the final projecct for the course IC design laboratory in National Tsing-Hua University.
+      Our design supports rendering colored triangular mesh with up to 1048576 faces and vertices in 144 fps.
+    </p>
+
+    <h3>Specification</h3>
+
+    <h4>Synthesis</h4>
+    <ul>
+      <li>Clock period: 8.0ns<br>
+        Note that the input and the output delay is 50% of the clock period.
+      </li>
+      <li>Area: 1,359,960 µm<sup>2</sup></li>
+    </ul>
+
+    <h4>APR</h4>
+    <ul>
+      <li>Clock period: 10.0ns</li>
+      <li>Area: 1,600,084 µm<sup>2</sup></li>
+      <li>Utilization: 85% (1359960 / 1600084)</li>
+      <li>Chip Layout<br>
+        <img src="https://raw.githubusercontent.com/HCN1222/3D-rendering-accelerator/main/images/chip_layout.png" alt="Chip Layout">
+      </li>
+      <li>IR drop<br>
+        <img src="https://raw.githubusercontent.com/HCN1222/3D-rendering-accelerator/main/images/IR_drop.png" alt="IR Drop">
+      </li>
+      <li>Power</li>
+    </ul>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Power Component</th>
+          <th>Pre Layout</th>
+          <th>Post Layout (Pre-sim waveform)</th>
+          <th>Post Layout (Post-sim waveform)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Net Switching Power</td>
+          <td>7.244 mW</td>
+          <td>0.0115 W</td>
+          <td>0.0174 W</td>
+        </tr>
+        <tr>
+          <td>Cell Internal Power</td>
+          <td>0.0372 W</td>
+          <td>0.0228 W</td>
+          <td>0.0365 W</td>
+        </tr>
+        <tr>
+          <td>Total Power</td>
+          <td>0.0445 W</td>
+          <td>0.0343 W</td>
+          <td>0.0539 W</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Input</h4>
+
+    <ul>
+      <li><b>Camera</b>
+        <ul>
+          <li><code>eyeX</code>, <code>eyeY</code>, <code>eyeZ</code>: The position of the camera. <em>24-bits signed fixed point, 4Q20.</em></li>
+          <li><code>centerX</code>, <code>centerY</code>, <code>centerZ</code>: The center of the camera screen. <em>24-bits signed fixed point, 4Q20.</em></li>
+          <li><code>upX</code>, <code>upY</code>, <code>upZ</code>: The Up direction of the camera. <em>24-bits signed fixed point, 4Q20.</em></li>
+          <li><code>input_valid</code>: Indicates if the input data is valid. <em>1-bit.</em></li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4>Output</h4>
+
+    <p>
+      Stores the result into sram (screen buffer (1280×720)).<br>
+      For the address of the screen buffer sram, each address contains 16 banks.<br>
+      The output format of the pixel is in RGB. <em>24-bits unsigned fixed point each, packed.</em> <em>72-bits</em> in total.
+    </p>
+
+    <ul>
+      <li><code>FINISH</code>: Indicates the end of rendering.</li>
+    </ul>
+
+    <h4>Sram</h4>
+
+    <ul>
+      <li><b>Vertices</b>
+        <ul>
+          <li><code>vertex</code>: The world space coordinate of the mesh (x, y, z) in <em>24-bits signed fixed point, 4Q20</em>, packed. <em>72-bits</em> in total.</li>
+        </ul>
+      </li>
+      <li><b>Face</b>
+        <ul>
+          <li><code>vertex1</code>, <code>vertiex2</code>, <code>vertiex3</code>: Records the addresses of the vertices that the face is composed of.</li>
+        </ul>
+      </li>
+      <li><b>Color</b>
+        <ul>
+          <li><code>color</code>: RGB of the vertex. <em>24-bits unsigned fixed point each, packed.</em> <em>72-bits</em> in total.</li>
+        </ul>
+      </li>
+      <li><b>Depth Buffer</b>
+        <ul>
+          <li><code>Depth</code>: The depth in NDC space, used to determined whether the pixel should be drawn or not. <em>signed 21-bit fixed point, 2Q19</em>.</li>
+        </ul>
+      </li>
+    </ul>
+
+  </details>
+
+  <hr style="border: 0; border-top: 1px solid #ccc; margin: 32px 0;">
+  
+  <!-- Project 3 -->
+  <h2><em>Tetris Battle Agent Trained with Q-learning</em></h2>
+
+  <p>
+    A reinforcement-learning agent trained with Q-learning for competitive gameplay.
+  </p>
+
+  <ul>
+    <li><a href="https://github.com/HCN1222/Tetris-battle-with-Q-learning">GitHub Repository</a></li>
+  </ul>
+
+  <details>
+    <summary><b>Quick Demo</b></summary>
+
+    <br>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th><strong>Single Player Mode</strong></th>
+          <th><strong>Two Players Mode</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>Functions:</strong> back to back, tetris, combo.
+          </td>
+          <td>
+            <strong>Functions:</strong> back to back, tetris, combo, KO.<br>
+            Left / Right: Ours / Others
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="https://raw.githubusercontent.com/HCN1222/Tetris-battle-with-Q-learning/main/imgs/single_demo.gif" alt="Single player demo" width="448">
+          </td>
+          <td>
+            <img src="https://raw.githubusercontent.com/HCN1222/Tetris-battle-with-Q-learning/main/imgs/double_demo.gif" alt="Two players demo" width="448">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </details>
+
+</body>
+</html>
+</div>
