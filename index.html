@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Digital Portfolio of Cheng-Ning Huang</title>
+  <title>Cheng-Ning Huang</title>
 </head>
 <body>
   <h1 style="text-align:center; font-size:38px; margin-top:20px;">
@@ -11,8 +11,7 @@
   </h1>
 
   <p>
-    The projects listed below represent my most significant work. Each project includes direct links to demos and repositories, and I encourage the committee to explore them for a clearer view.
-    For additional projects mentioned in my résumé, please visit my
+    The projects listed below represent my most significant work. For other projects, please visit my
     <a href="https://github.com/HCN1222">GitHub main page</a>.
   </p>
 
@@ -146,57 +145,6 @@
         </tr>
       </tbody>
     </table>
-
-    <h4>Input</h4>
-
-    <ul>
-      <li><b>Camera</b>
-        <ul>
-          <li><code>eyeX</code>, <code>eyeY</code>, <code>eyeZ</code>: The position of the camera. <em>24-bits signed fixed point, 4Q20.</em></li>
-          <li><code>centerX</code>, <code>centerY</code>, <code>centerZ</code>: The center of the camera screen. <em>24-bits signed fixed point, 4Q20.</em></li>
-          <li><code>upX</code>, <code>upY</code>, <code>upZ</code>: The Up direction of the camera. <em>24-bits signed fixed point, 4Q20.</em></li>
-          <li><code>input_valid</code>: Indicates if the input data is valid. <em>1-bit.</em></li>
-        </ul>
-      </li>
-    </ul>
-
-    <h4>Output</h4>
-
-    <p>
-      Stores the result into sram (screen buffer (1280×720)).<br>
-      For the address of the screen buffer sram, each address contains 16 banks.<br>
-      The output format of the pixel is in RGB. <em>24-bits unsigned fixed point each, packed.</em> <em>72-bits</em> in total.
-    </p>
-
-    <ul>
-      <li><code>FINISH</code>: Indicates the end of rendering.</li>
-    </ul>
-
-    <h4>Sram</h4>
-
-    <ul>
-      <li><b>Vertices</b>
-        <ul>
-          <li><code>vertex</code>: The world space coordinate of the mesh (x, y, z) in <em>24-bits signed fixed point, 4Q20</em>, packed. <em>72-bits</em> in total.</li>
-        </ul>
-      </li>
-      <li><b>Face</b>
-        <ul>
-          <li><code>vertex1</code>, <code>vertiex2</code>, <code>vertiex3</code>: Records the addresses of the vertices that the face is composed of.</li>
-        </ul>
-      </li>
-      <li><b>Color</b>
-        <ul>
-          <li><code>color</code>: RGB of the vertex. <em>24-bits unsigned fixed point each, packed.</em> <em>72-bits</em> in total.</li>
-        </ul>
-      </li>
-      <li><b>Depth Buffer</b>
-        <ul>
-          <li><code>Depth</code>: The depth in NDC space, used to determined whether the pixel should be drawn or not. <em>signed 21-bit fixed point, 2Q19</em>.</li>
-        </ul>
-      </li>
-    </ul>
-
   </details>
 
   <hr style="border: 0; border-top: 1px solid #ccc; margin: 32px 0;">
