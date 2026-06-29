@@ -1,0 +1,38 @@
+---
+title: "3D Accident-Scene Reconstruction with Gaussian Splatting"
+publishedAt: "2025-01-01"
+summary: "A Gaussian Splatting pipeline that reconstructs real-world car-accident scenes into accurate 3D meshes, enabling inter-object distance measurement and faster site clearance."
+images:
+  - "/images/projects/gaussian-splatting/cover.jpg"
+---
+
+## Overview
+
+Reconstructs real-world car-accident scenes into accurate 3D meshes using Gaussian
+Splatting, enabling precise inter-object distance measurement and dramatically reducing
+public wait times at accident sites.
+
+## Demo
+
+<Media
+  src="https://www.youtube.com/embed/3oCs9Vac0BQ"
+  aspectRatio="16 / 9"
+  radius="m"
+  alt="Gaussian Splatting accident-scene reconstruction demo"
+/>
+
+## Highlights
+
+- **2D Gaussian disks for surfaces**: Replaced traditional 3D blobs with 2D Gaussian
+  disks to improve mesh-reconstruction accuracy, yielding reconstructed distances within
+  10% of ground truth.
+- **Joint normal & environment-map training**: Extended backpropagation to jointly train
+  surface normals and environment maps, reducing reflection-related artifacts in
+  real-world car scenes.
+- **Faster site clearance**: Enabled pre-clearance vehicle removal via advanced scene
+  scanning, cutting public wait times at accident sites from over 30 minutes to under 10.
+
+## Context
+
+Research conducted at the National Tsing Hua University Computer Vision Lab
+(Advisor: Dr. Shang-Hong Lai), February 2024 – January 2025.

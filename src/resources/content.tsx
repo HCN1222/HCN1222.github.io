@@ -2,13 +2,14 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Cheng-Ning",
+  firstName: "Cheng‑Ning",
   lastName: "Huang",
-  name: `Cheng-Ning Huang`,
+  name: `Cheng‑Ning Huang`,
   role: "Robotics & Computer Vision Engineer",
   avatar: "/images/avatar.jpg",
   email: "chengnih@andrew.cmu.edu",
-  location: "America/New_York", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "America/New_York", // IANA time zone (drives the clock); Pittsburgh shares US Eastern time
+  displayLocation: "US/Pittsburgh", // human-readable label shown in the UI
   languages: ["English", "Mandarin"], // optional: Leave the array empty if you don't want to display languages
   locale: "en", // BCP 47 language tag for the HTML lang attribute, e.g., 'en', 'ja', 'zh-TW'
 };

@@ -119,7 +119,19 @@ export default async function Project({
         </Row>
       </Row>
       {post.metadata.images.length > 0 && (
-        <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
+        <Column fillWidth gap="m">
+          {post.metadata.images.map((src: string, index: number) => (
+            <Media
+              key={index}
+              priority={index === 0}
+              enlarge
+              aspectRatio="16 / 9"
+              radius="m"
+              alt={post.metadata.title}
+              src={src}
+            />
+          ))}
+        </Column>
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
