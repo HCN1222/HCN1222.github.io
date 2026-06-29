@@ -107,6 +107,7 @@ const about: About = {
     experiences: [
       {
         company: "Microsoft (Bing Maps Geocoding Team)",
+        logo: "/images/logos/microsoft.jpg",
         timeframe: "Jul 2024 – Jun 2025",
         role: "Research Development Intern, FY2025",
         achievements: [
@@ -132,6 +133,7 @@ const about: About = {
       },
       {
         company: "National Tsing Hua University – CV Lab",
+        logo: "/images/logos/nthu.png",
         timeframe: "Feb 2024 – Jan 2025",
         role: "Research Assistant (Advisor: Dr. Shang-Hong Lai)",
         achievements: [
@@ -160,12 +162,14 @@ const about: About = {
     institutions: [
       {
         name: "Carnegie Mellon University",
+        logo: "/images/logos/cmu.jpg",
         description: (
           <>M.S. in Robotic Systems Development, School of Computer Science (Aug 2026 – Dec 2027).</>
         ),
       },
       {
         name: "National Tsing Hua University",
+        logo: "/images/logos/nthu.png",
         description: (
           <>B.S. in Electrical Engineering and Computer Science (Sep 2021 – Jun 2025).</>
         ),
