@@ -14,7 +14,7 @@ import {
 import { home, person, social } from "./content";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://hcn1222.github.io";
+const baseURL: string = "https://hcn-1222-github-io.vercel.app";
 
 const routes: RoutesConfig = {
   "/": true,
