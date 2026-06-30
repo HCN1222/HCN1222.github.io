@@ -55,14 +55,14 @@ const home: Home = {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Vision-Only Navigation</strong>{" "}
+        <strong className="ml-4">Gaussian Splatting</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured project
         </Text>
       </Row>
     ),
-    href: "/work/vision-only-autonomous-target-search-navigation",
+    href: "/work/gaussian-splatting-accident-scene-reconstruction",
   },
   subline: (
     <>
