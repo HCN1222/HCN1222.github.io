@@ -1,13 +1,17 @@
 import { getPosts } from "@/utils/utils";
-import { Column } from "@once-ui-system/core";
+import { Grid } from "@once-ui-system/core";
 import { ProjectCard } from "@/components";
 
 interface ProjectsProps {
   range?: [number, number?];
   exclude?: string[];
+  /** Number of columns to display projects in (defaults to a single column) */
+  columns?: "1" | "2";
+  /** Explicit slug order; any project not listed falls back after, sorted by date */
+  order?: string[];
 }
 
-export function Projects({ range, exclude }: ProjectsProps) {
+export function Projects({ range, exclude, columns = "1", order }: ProjectsProps) {
   let allProjects = getPosts(["src", "app", "work", "projects"]);
 
   // Exclude by slug (exact match)
@@ -16,6 +20,14 @@ export function Projects({ range, exclude }: ProjectsProps) {
   }
 
   const sortedProjects = allProjects.sort((a, b) => {
+    if (order && order.length > 0) {
+      const rank = (slug: string) => {
+        const index = order.indexOf(slug);
+        return index === -1 ? Number.MAX_SAFE_INTEGER : index;
+      };
+      const diff = rank(a.slug) - rank(b.slug);
+      if (diff !== 0) return diff;
+    }
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
   });
 
@@ -24,7 +36,14 @@ export function Projects({ range, exclude }: ProjectsProps) {
     : sortedProjects;
 
   return (
-    <Column fillWidth gap="xl" marginBottom="40" paddingX="l">
+    <Grid
+      columns={columns}
+      s={{ columns: 1 }}
+      fillWidth
+      marginBottom="40"
+      paddingX="l"
+      gap={columns === "2" ? "l" : "xl"}
+    >
       {displayedProjects.map((post, index) => (
         <ProjectCard
           priority={index < 2}
@@ -36,8 +55,9 @@ export function Projects({ range, exclude }: ProjectsProps) {
           content={post.content}
           avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
           link={post.metadata.link || ""}
+          direction={columns === "2" ? "column" : undefined}
         />
       ))}
-    </Column>
+    </Grid>
   );
 }

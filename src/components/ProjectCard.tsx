@@ -19,6 +19,7 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string }[];
   link: string;
+  direction?: "row" | "column";
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -29,23 +30,25 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  direction,
 }) => {
   return (
     <Column fillWidth gap="m">
       <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
+        sizes="(max-width: 960px) 100vw, 480px"
         items={images.map((image) => ({
           slide: image,
           alt: title,
         }))}
       />
       <Flex
+        direction={direction === "column" ? "column" : undefined}
         s={{ direction: "column" }}
         fillWidth
         paddingX="s"
         paddingTop="12"
         paddingBottom="24"
-        gap="l"
+        gap={direction === "column" ? "16" : "l"}
       >
         {title && (
           <Flex flex={5}>
