@@ -137,7 +137,7 @@ const about: About = {
         timeframe: "Feb 2024 – Jan 2025",
         role: "Undergraduate Researcher (Advisor: Dr. Shang-Hong Lai)",
         project: {
-          name: "Accurate Mesh Reconstruction of Reflective Car Surfaces via 2D Gaussian Splatting",
+          name: "Accurate Mesh Reconstruction of Reflective Car Surfaces in Accident Scenes via 2D Gaussian Splatting",
           href: "/work/gaussian-splatting-accident-scene-reconstruction",
         },
         achievements: [
