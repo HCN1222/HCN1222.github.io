@@ -31,15 +31,7 @@ export default function Work() {
       <Heading marginBottom="l" variant="heading-strong-xl" align="center">
         {work.title}
       </Heading>
-      <Projects
-        columns="2"
-        order={[
-          "gaussian-splatting-accident-scene-reconstruction",
-          "vision-only-autonomous-target-search-navigation",
-          "high-performance-3d-rendering-accelerator",
-          "tetris-battle-agent-q-learning",
-        ]}
-      />
+      <Projects columns="2" />
     </Column>
   );
 }

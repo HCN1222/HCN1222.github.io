@@ -2,6 +2,14 @@ import { getPosts } from "@/utils/utils";
 import { Grid } from "@once-ui-system/core";
 import { ProjectCard } from "@/components";
 
+/** Canonical project display order, shared across the home, work, and related lists */
+export const PROJECT_ORDER = [
+  "gaussian-splatting-accident-scene-reconstruction",
+  "vision-only-autonomous-target-search-navigation",
+  "high-performance-3d-rendering-accelerator",
+  "tetris-battle-agent-q-learning",
+];
+
 interface ProjectsProps {
   range?: [number, number?];
   exclude?: string[];
@@ -11,7 +19,7 @@ interface ProjectsProps {
   order?: string[];
 }
 
-export function Projects({ range, exclude, columns = "1", order }: ProjectsProps) {
+export function Projects({ range, exclude, columns = "1", order = PROJECT_ORDER }: ProjectsProps) {
   let allProjects = getPosts(["src", "app", "work", "projects"]);
 
   // Exclude by slug (exact match)
