@@ -135,7 +135,11 @@ const about: About = {
         company: "National Tsing Hua University – CV Lab",
         logo: "/images/logos/nthu.png",
         timeframe: "Feb 2024 – Jan 2025",
-        role: "Research Assistant (Advisor: Dr. Shang-Hong Lai)",
+        role: "Undergraduate Researcher (Advisor: Dr. Shang-Hong Lai)",
+        project: {
+          name: "3D Accident-Scene Reconstruction with Gaussian Splatting",
+          href: "/work/gaussian-splatting-accident-scene-reconstruction",
+        },
         achievements: [
           <>
             Applied 2D Gaussian disks in place of traditional 3D blobs to improve 3D mesh

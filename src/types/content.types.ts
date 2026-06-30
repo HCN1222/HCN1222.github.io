@@ -160,6 +160,13 @@ export interface About extends BasePageConfig {
       timeframe: string;
       /** Role or job title */
       role: string;
+      /** Optional featured project/thesis, with an optional link to its page */
+      project?: {
+        /** Display name of the project */
+        name: string;
+        /** Optional link to the project page */
+        href?: string;
+      };
       /** Achievements at the company */
       achievements: React.ReactNode[];
       /** Images related to the experience */

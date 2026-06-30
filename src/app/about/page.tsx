@@ -11,6 +11,7 @@ import {
   Meta,
   Schema,
   Row,
+  SmartLink,
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
@@ -228,9 +229,29 @@ export default function About() {
                         {experience.timeframe}
                       </Text>
                     </Row>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
+                    <Text
+                      variant="body-default-s"
+                      onBackground="brand-weak"
+                      marginBottom={experience.project ? "4" : "m"}
+                    >
                       {experience.role}
                     </Text>
+                    {experience.project && (
+                      <Text
+                        variant="body-default-s"
+                        onBackground="neutral-weak"
+                        marginBottom="m"
+                      >
+                        Project:{" "}
+                        {experience.project.href ? (
+                          <SmartLink href={experience.project.href}>
+                            {experience.project.name}
+                          </SmartLink>
+                        ) : (
+                          experience.project.name
+                        )}
+                      </Text>
+                    )}
                     <Column as="ul" gap="16">
                       {experience.achievements.map(
                         (achievement: React.ReactNode, index: number) => (
