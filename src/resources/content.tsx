@@ -46,7 +46,9 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: `/api/og/generate?title=${encodeURIComponent(
+    "Engineering perception and 3D understanding for robots",
+  )}`,
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio of ${person.name}, a ${person.role.toLowerCase()}`,
