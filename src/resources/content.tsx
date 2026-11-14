@@ -170,7 +170,7 @@ const about: About = {
         name: "Carnegie Mellon University",
         logo: "/images/logos/cmu.jpg",
         description: (
-          <>M.S. in Robotic Systems Development, School of Computer Science (Aug 2026 – Dec 2027).</>
+          <>M.S. in Robotic Systems Development, School of Computer Science (Aug 2026 – May 2028).</>
         ),
       },
       {
